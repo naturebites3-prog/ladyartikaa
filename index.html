@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday, Lady Artika!</title>
+  
+  <!-- Favicon using Apple emoji -->
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f380.png" type="image/png">
+
+  <!-- Google Fonts: Cute, Soft & Natural -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Comfortaa:wght@500;700&family=Quicksand:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Background Elements with Apple Emojis -->
+  <div id="particles-container"></div>
+
+  <!-- Music Toggle Floating Pill -->
+  <div class="audio-control" id="audioToggleBtn" title="Putar / Matikan Lagu">
+    <div class="music-icon-wrap">
+      <span class="music-note" id="musicIcon">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f3b5.png" alt="🎵">
+      </span>
+      <div class="sound-wave" id="soundWave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <span class="audio-text" id="audioStatusText">Lagu: On</span>
+  </div>
+
+  <!-- ==================== OPENING ENVELOPE MODAL ==================== -->
+  <div class="opening-overlay" id="openingOverlay">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope-badge">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+        27 Oktober • Hari Paling Spesial
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+      </div>
+      
+      <div class="envelope" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-letter-preview">
+          <div class="letter-stamp">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48c.png" alt="💌">
+          </div>
+          <p class="letter-to">Khusus Buat Pacarku:</p>
+          <h2 class="letter-name">Lady Artika</h2>
+          <p class="letter-hint">
+            ada surat kecil buat kamu di dalem... klik tanda hati ini buat buka yaa sayang
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+          </p>
+        </div>
+        <button class="heart-seal-btn" id="openBtn" aria-label="Buka Surat">
+          <span class="seal-icon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+          </span>
+          <span class="seal-text">Buka Surat</span>
+        </button>
+      </div>
+
+      <p class="opening-subtext">
+        nyalain suaranya yaa biar makin dapet suasananyaa
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f3a7.png" alt="🎧">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main-content" id="mainContent">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="date-badge">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+        27 Oktober • Happy Birthday Cantik!
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+      </div>
+      
+      <h1 class="hero-title">
+        Selamat Ulang Tahun, <br>
+        <span class="gradient-name">Lady Artika</span>
+        <span class="cute-crown">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f451.png" alt="👑">
+        </span>
+      </h1>
+
+      <p class="hero-subtitle">
+        web kecil ini sengaja aku bikin khusus di hari ulang tahun kamu. semoga kamu suka yaa
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f970.png" alt="🥰">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f495.png" alt="💕">
+      </p>
+
+      <div class="hero-actions">
+        <a href="#letterSection" class="btn btn-primary">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48c.png" alt="💌">
+          <span>Buka Surat dari Aku</span>
+        </a>
+        <a href="#cakeSection" class="btn btn-secondary">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f382.png" alt="🎂">
+          <span>Tiup Lilin Dulu Yuk</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY / POLAROID SECTION -->
+    <section class="section gallery-section" id="gallerySection">
+      <div class="section-header">
+        <span class="section-tag">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f4f8.png" alt="📸">
+          Foto Favorit
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f4f8.png" alt="📸">
+        </span>
+        <h2 class="section-title">Dua Foto Kamu yang Paling Bikin Salting</h2>
+        <p class="section-desc">
+          dari sekian banyak foto kamu, dua foto ini yang gapernah gagal bikin aku senyum-senyum sendiri wkwk
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f495.png" alt="💕">
+        </p>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- Polaroid Card 1 -->
+        <div class="polaroid-card card-tilt-left" data-card="1">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/photo1.jpg" alt="Lady Artika Manis" loading="lazy" class="polaroid-img">
+            <div class="photo-overlay-sparkle">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <div class="caption-badge">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+              My Favorite Smile
+            </div>
+            <h3 class="polaroid-name">awwwwwww cayangkuh</h3>
+            <p class="polaroid-text">
+             
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+            </p>
+            <div class="polaroid-footer">
+              <span class="polaroid-date">27 Oktober</span>
+              <button class="love-it-btn" onclick="triggerLoveReaction(this)">
+                <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2764-fe0f.png" alt="❤️">
+                <span class="like-count">Gemes Bgt</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid Card 2 -->
+        <div class="polaroid-card card-tilt-right" data-card="2">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/photo2.jpg" alt="Lady Artika Cantik Berkacamata" loading="lazy" class="polaroid-img">
+            <div class="photo-overlay-sparkle">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <div class="caption-badge">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f453.png" alt="👓">
+              Lucu Parah
+            </div>
+            <h3 class="polaroid-name">luucuuu nyoooo!!</h3>
+            <p class="polaroid-text">
+            
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f970.png" alt="🥰">
+            </p>
+            <div class="polaroid-footer">
+
+              <button class="love-it-btn" onclick="triggerLoveReaction(this)">
+                <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2764-fe0f.png" alt="❤️">
+                <span class="like-count">Sayang Bgt</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BIRTHDAY CAKE & BLOW CANDLE -->
+    <section class="section cake-section" id="cakeSection">
+      <div class="section-header">
+        <span class="section-tag">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f382.png" alt="🎂">
+          Make a Wish
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f382.png" alt="🎂">
+        </span>
+        <h2 class="section-title">Tiup Lilinnya Dulu Sayang!</h2>
+        <p class="section-desc">
+          pejemin mata bentar, sebutin semua doa dan harapan terbaik kamu di dalam hati, abis itu tiup lilinnya yaa!
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+        </p>
+      </div>
+
+      <div class="cake-stage">
+        <div class="cake-container" id="cakeContainer">
+          <div class="cake-plate"></div>
+          
+          <div class="cake-body">
+            <div class="layer layer-bottom">
+              <div class="frosting-drops">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="layer layer-top">
+              <div class="frosting-drops top-drops">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="strawberries">
+                <span class="berry b1">
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f353.png" alt="🍓">
+                </span>
+                <span class="berry b2">
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f353.png" alt="🍓">
+                </span>
+                <span class="berry b3">
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f353.png" alt="🍓">
+                </span>
+              </div>
+            </div>
+
+            <!-- Candle -->
+            <div class="candle" id="candle">
+              <div class="candle-stick"></div>
+              <div class="candle-flame" id="flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="candle-smoke" id="smoke"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-controls">
+          <button class="btn btn-cake" id="blowBtn">
+            <span class="btn-icon" id="blowBtnIcon">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f4a8.png" alt="💨">
+            </span>
+            <span id="blowBtnText">Tiup Lilin Sekarang</span>
+          </button>
+        </div>
+
+        <!-- Wish Message Box (Hidden initially) -->
+        <div class="wish-reveal-box" id="wishRevealBox">
+          <div class="wish-ribbon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f389.png" alt="🎉">
+            WISH GRANTED!
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f389.png" alt="🎉">
+          </div>
+          <h3>
+            Yaaay, Lilinnya Padam!
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f382.png" alt="🎂">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+          </h3>
+          <p>
+            Aamiin paling kenceng sedunia!! Semoga semua doa yang tadi kamu sebutin beneran dikabulin satu per satu sama Tuhan yaa sayang. 
+            Semoga di umur baru ini harimu lebih banyak tawa, dijauhin dari hal-hal sedih, dan selalu dilindungin di mana pun kamu berada. Aamiin ya Allah
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f932.png" alt="🤲">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL LOVE LETTER (UCAPAN SPESIAL) -->
+    <section class="section letter-section" id="letterSection">
+      <div class="section-header">
+        <span class="section-tag">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48c.png" alt="💌">
+          Dari Isi Hati Aku Paling Dalem
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48c.png" alt="💌">
+        </span>
+        <h2 class="section-title">Surat Kecil Buat Lady Artika</h2>
+        <p class="section-desc">baca pelan-pelan yaa sayang, ini beneran tulus aku tulis buat kamu...</p>
+      </div>
+
+      <div class="letter-card-container">
+        <div class="letter-card">
+          <div class="letter-top-deco">
+            <div class="wax-seal">
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f495.png" alt="💕">
+            </div>
+            <div class="letter-meta">
+              <span class="meta-date">27 Oktober</span>
+              <span class="meta-author">Dari: pacarmu yang selalu sayang kamu</span>
+            </div>
+          </div>
+
+          <div class="letter-body">
+            <p class="greeting-highlight">
+              haiii sayangkuuu, selamat ulang tahun yaaa...
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+            </p>
+
+            <p>
+              aku tau di hari special ini banyak orang yang gak excited, tapi as a bf ga mungkin hari ini hari yang biasa buat aku, hari ini bukan cuma hari bahagia dan special buat kamu tapi juga buat aku dan mungkin orang terdekat kamu lainnya, aku berharap mulai hari ini kamu akan jadi sosok yang lebih baik, selalu diberi kebahagiaan, kesehatan, dll.
+            </p>
+
+            <div class="quote-box">
+              <p>
+                aku juga berharap semoga semua yang kamu inginkan bisa tercapai satu per satu, semoga apa pun yang lagi kamu usahain sekarang bisa membuahkan hasil yang baik, dan semoga kamu selalu dikelilingi hal-hal baik yang bikin kamu bahagia.
+                <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+              </p>
+            </div>
+
+            <p>
+              kalau nanti ada hari yang berat buat kamu, aku harap kamu bisa ngelewatin semuanya dengan kuat, <strong>tapi jangan lupa kalau kamu juga boleh capek, boleh istirahat, dan gak harus selalu keliatan baik-baik aja.</strong>
+            </p>
+
+            <p>
+              aku bangga sama kamu karena udah bertahan sampai sejauh ini, dan aku harap di umur kamu yang baru ini kamu bisa lebih sayang sama diri sendiri, lebih percaya sama kemampuan kamu, dan gak terlalu keras sama diri kamu sendiri.
+            </p>
+
+            <div class="highlight-pill">
+              aku pengen kamu tau kalau kamu berharga, bukan cuma buat aku, tapi juga buat orang-orang yang sayang sama kamu. i love you so much!! &lt;3
+              <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+            </div>
+
+            <p>
+              dan buat kita berdua, aku berharap semoga kita bisa terus bareng-bareng, dan jadi pasangan yang lebih baik dari sebelumnya. aku tau aku masih banyak kurangnya, tapi aku bakal terus berusaha buat jadi seseorang yang bisa bikin kamu ngerasa disayang dan dihargai. aku mungkin gak selalu bisa bikin hari-hari kamu sempurna, tapi aku pengen bisa jadi orang yang nemenin kamu.
+            </p>
+
+            <p>
+              semoga di umur kamu yang sekarang, lebih banyak bahagia-nya, dan lebih sedikit sedih-nya. jangan lupa jaga kesehatan, jangan sering telat makan, dan jangan terlalu capek kalau lagi banyak kegiatan yaaa sayanggg.
+            </p>
+
+            <div class="letter-closing">
+              <p class="final-wishes">
+                sekali lagi, <strong>happy birthday, cintakuuu!!</strong> makasih udah lahir ke dunia ini dan makasii juga karena udah jadi bagian dari hidup aku. semoga aku masih bisa nemenin kamu di ulang tahun-ulang tahun berikutnya, ngeliat kamu tumbuh jadi orang yang kamu impikan, dan ngerayain banyak hal baik bareng kamu.
+              </p>
+
+              <p class="final-love">
+                semoga hari ini dan hari-hari setelahnya selalu punya kebahagiaan buat kamu. i love you more than words can explain sayangkuuu. <br>
+                <span>
+                  bahagia selalu yaaa, my birthday girl!!
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f380.png" alt="🎀">
+                  <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/2728.png" alt="✨">
+                </span>
+              </p>
+            </div>
+
+            <div class="letter-signature">
+              <p class="sig-title">selalu sayang kamu,</p>
+              <h4 class="sig-name">
+                Pacarmu
+                <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f970.png" alt="🥰">
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LOVE CAPSULES & VIRTUAL HUG -->
+    <section class="section interactive-section">
+      <div class="section-header">
+        <span class="section-tag">
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f381.png" alt="🎁">
+          Pesan Buat Kamu
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f381.png" alt="🎁">
+        </span>
+        <h2 class="section-title">Kalo Lagi Butuh Semangat, Buka Ini Ya</h2>
+        <p class="section-desc">klik kartu-kartunya kapan pun kamu lagi butuh pengingat manis atau lagi capek!</p>
+      </div>
+
+      <div class="capsules-grid">
+        <div class="capsule-card" onclick="openCapsuleByData(this)" data-title="Kalau Kamu Lagi Capek" data-icon="1f6cb-fe0f" data-text="sayang, jangan dipaksain yaa kalau emang badan atau kepala kamu lagi capek. istirahat dulu gpp bgt, ga usah buru-buru, kamu ga harus selalu keliatan kuat kok. kalau butuh tempat cerita atau cuma pengen ditemenin diem, aku selalu ada di sini buat kamu">
+          <div class="capsule-icon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f6cb-fe0f.png" alt="🛋️">
+          </div>
+          <h3>Kalau Kamu Lagi Capek</h3>
+          <p>
+            buka ini kalau badan/pikiran lagi lelah
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+          </p>
+        </div>
+
+        <div class="capsule-card" onclick="openCapsuleByData(this)" data-title="Kalau Kepala Lagi Berisik" data-icon="1f9e0" data-text="hei cantiknya aku, stop overthinking-nya yaa. kamu tuh udah keren dan hebat banget udah lewatin banyak hal sampai hari ini. jangan terlalu keras sama diri kamu sendiri yaa sayang, aku selalu percaya dan bangga sama kamu">
+          <div class="capsule-icon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f9e0.png" alt="🧠">
+          </div>
+          <h3>Kalau Lagi Overthinking</h3>
+          <p>
+            buka ini kalau lagi banyak pikiran
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1fae7.png" alt="🫧">
+          </p>
+        </div>
+
+        <div class="capsule-card" onclick="openCapsuleByData(this)" data-title="Jangan Lupa Makan!" data-icon="1f35a" data-text="jangan males makan atau numpuk kerjaan sampai lupa jam makan yaa sayanggg! minum air putih yang banyak juga. kesehatan kamu nomor satu buat aku, gaboleh sakit yaa cintakuuu">
+          <div class="capsule-icon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f35a.png" alt="🍚">
+          </div>
+          <h3>Jangan Lupa Makan!</h3>
+          <p>
+            reminder penting banget nih
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f37d-fe0f.png" alt="🍽️">
+          </p>
+        </div>
+
+        <div class="capsule-card" onclick="openCapsuleByData(this)" data-title="Kamu Berharga Banget" data-icon="1f48e" data-text="kamu tuh anugerah terindah buat aku. makasih yaa udah hadir dan jadi bagian terbaik di hidup aku. kamu sangat berharga dan berarti. i love you more than words can explain sayangkuuu!">
+          <div class="capsule-icon">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48e.png" alt="💎">
+          </div>
+          <h3>Kamu Berharga Banget</h3>
+          <p>
+            jangan pernah lupa yaa sayang
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+          </p>
+        </div>
+      </div>
+
+      <!-- Virtual Hug & Love Generator Counter -->
+      <div class="love-counter-box">
+        <h3>
+          Peluk & Cium Virtual Buat Lady
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f917.png" alt="🤗">
+        </h3>
+        <p>
+          pencet tombol di bawah ini terus buat kumpulin pelukan dari aku hehe
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f495.png" alt="💕">
+        </p>
+        
+        <div class="counter-display">
+          <span class="counter-number" id="loveCount">0</span>
+          <span class="counter-unit">Pelukan Hangat</span>
+        </div>
+
+        <button class="btn btn-hug" id="sendHugBtn">
+          <span class="hug-emoji">
+            <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f917.png" alt="🤗">
+          </span>
+          <span>Kirim Pelukan Sayang!</span>
+        </button>
+
+        <p class="counter-milestone" id="milestoneText">
+          klik tombolnya terus buat kirim banyak cinta!
+          <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f495.png" alt="💕">
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-heart">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f496.png" alt="💖">
+      </div>
+      <p class="footer-title">Happy Birthday, Lady Artika!</p>
+      <p class="footer-date">27 Oktober</p>
+      <p class="footer-tagline">
+        web kecil ini dibuat dengan segenap cinta, semoga suka yaa hehe
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f338.png" alt="🌸">
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- POPUP MODAL FOR CAPSULES -->
+  <div class="modal-overlay" id="capsuleModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <div class="modal-icon" id="modalIcon">
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f48c.png" alt="💌">
+      </div>
+      <h3 class="modal-title" id="modalTitle">Pesan Spesial</h3>
+      <p class="modal-text" id="modalText">Isi pesan...</p>
+      <button class="btn btn-primary" onclick="closeCapsuleModal()">
+        <span>Makasih Sayang!</span>
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/15.0.1/img/apple/64/1f970.png" alt="🥰">
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
